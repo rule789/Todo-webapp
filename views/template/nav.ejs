@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm bg-info ">
+  <ul class="navbar-nav p-2 link">
+    <li class="nav-item">
+      <a href="/" id="opinion" class="link_button nav-link  nav_other">首頁</a>
+    </li>
+    <% if (auth) { %>
+    <li class="nav-item">
+      <a href="/user/profile" id="user_region" class="link_button nav-link  nav_other">個人專區</a>
+    </li>
+    <% } %>
+    <div class="nav-item">
+      <a href="/opinion" id="opinion" class="link_button nav-link  nav_other">我有意見</a>
+    </div>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+
+    <% if (auth) { %>
+    <div class="nav-item">
+      <a href="/user/logout" id="logout" class="link_button nav-link  nav_other">登出</a>
+    </div>
+    <% } else { %>
+    <div class="nav-item">
+      <a href="/user/register" id="register" class="link_button nav-link nav_other" >註冊</a>
+    </div>
+    <div class="nav-item">
+      <a href="/user/login" id="login" class="link_button nav-link  nav_other">登入</a>
+    </div>
+    <% } %>
+
+
+  </ul>
+
+
+</nav>
+

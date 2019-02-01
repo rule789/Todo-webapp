@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>大家來註冊</title>
+  <link rel="stylesheet" href="/stylesheets/css/bootstrap.min.css">
+  <link rel='stylesheet' href='/stylesheets/css/register.css'/>
+</head>
+<body>
+
+<!-- nav -->
+<%- include template/nav %>
+
+<!-- 註冊表單 -->
+<div class="bg-light w-100 p-5">
+  <div class="text-center">
+    <h1 class="register_word"><%= title %></h1>
+
+    <form id="registerForm" action="/user/register" class="form-group container formArea" method="post">
+
+      <div class="row mb-4">
+        <label for="account" class="col-2 col-form-label label_word">帳號</label>
+        <input type="text" id="account" name="account" placeholder="abc123@example.com" class="form-control col-5">
+        <div class="w-100"></div>
+        <div class="col-2"></div>
+        <small class="form-text checkResultText"></small>
+      </div>
+
+      <div class="row mb-4 ">
+        <label for="pwd"  class="col-2 col-form-label label_word">密碼</label>
+        <input type="password" id="pwd" name="pwd" placeholder="至少6位元" class="form-control col-5">
+        <div class="w-100"></div>
+        <div class="col-2"></div>
+        <small class="form-text checkResultText"></small>
+      </div>
+
+      <div class="row mb-4">
+        <label for="pwd_again" class="col-2 col-form-label label_word ">重新輸入密碼</label>
+        <input type="password" id="pwd_again" class="form-control col-5">
+        <div class="w-100"></div>
+        <div class="col-2"></div>
+        <small class="form-text checkResultText"></small>
+      </div>
+
+    </form>
+
+    <input form="registerForm" type="submit" id="send" value="送出" class="btn btnSend px-5" >
+  </div>
+
+</div>
+
+
+
+<script src="../javascripts/lib/jquery-3.3.1.min.js"></script>
+<script src="../javascripts/lib/bootstrap.bundle.min.js"></script>
+<script src="../javascripts/registerPage.js"></script>
+</body>
+</html>

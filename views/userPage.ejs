@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>個人專區</title>
+  <link rel="stylesheet" href="/stylesheets/css/bootstrap.min.css">
+  <link rel='stylesheet' href='/stylesheets/css/userPage.css'/>
+</head>
+<body>
+
+  <% include template/nav %>
+
+  <div class="row">
+    <!-- 圖 -->
+    <div class="col-3 bg-light picture_area">
+      <div class="rounded-circle bg-white picture mx-auto mt-3">
+        <img src="<%- img%>" alt="photo" id="img">
+      </div>
+      <div class="d-flex">
+        <a href="#" class="changePic" data-toggle="modal" data-target="#exampleModal">變更圖片</a>
+      </div>
+      <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
+        <!-- Launch demo modal -->
+      <!-- </button> -->
+    </div>
+    <div class="col">
+      <form action="#" method="post">
+      <div class="form-group row ml-5 mt-5">
+          <label for="name" class="col-1 col-form-label name_label">暱稱</label>
+          <div class="col-5 d-flex">
+            <input type="text" class="form-control nickname" id="nickChange" value="<%= nickname%>">
+          </div>
+          <!-- button -->
+          <div class="col-2 d-flex align-content-center">
+            <button type="button" class="btn btn_bg" id="nickBtn">確定</button>
+          </div>
+
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">選擇圖片</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <input type="file" name="file" id="file">
+          <p id="result"></p>
+          <!-- <img id="img" src=""> -->
+        </div>
+<!-- <button id="upload" class="btn btn-default">提交</button> -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="upload">變更</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../javascripts/lib/jquery-3.3.1.min.js"></script>
+<script src="../javascripts/lib/bootstrap.bundle.min.js"></script>
+<script src="../javascripts/userPage.js"></script>
+</body>
+</html>

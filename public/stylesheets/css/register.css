@@ -1,0 +1,30 @@
+@charset "UTF-8";
+body {
+  font: 14px "微軟正黑體", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0; }
+
+.nav_other {
+  color: #AAFFEE;
+  font-size: 20px; }
+  .nav_other:hover {
+    color: #fff; }
+
+.btnSend {
+  background: #FF8800;
+  color: #fff;
+  margin-top: 40px; }
+
+.register_word {
+  margin-bottom: 60px; }
+
+.formArea {
+  font-size: 15px;
+  margin-left: 300px; }
+
+.label_word {
+  font-size: 17px;
+  vertical-align: middle; }
+
+.checkResultText {
+  display: none; }

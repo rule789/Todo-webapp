@@ -1,0 +1,52 @@
+@charset "UTF-8";
+body {
+  font: 17px "微軟正黑體", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0; }
+
+.nav_other {
+  color: #AAFFEE;
+  font-size: 20px; }
+  .nav_other:hover {
+    color: #fff; }
+
+.btnSend {
+  background: #FF8800;
+  color: #fff;
+  margin-top: 40px; }
+
+#loginForm {
+  margin-left: 25vw; }
+
+.loginTitleWord {
+  margin-bottom: 60px; }
+
+.loginTitle {
+  font-size: 17px; }
+
+.errorTextBorder {
+  display: none;
+  height: 30px;
+  margin-bottom: 20px;
+  border-radius: 3px; }
+  .errorTextBorder .errorCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background: #FFE4E1;
+    height: 100%;
+    padding: 0 10px; }
+    .errorTextBorder .errorCenter .errorIcon {
+      height: 40%;
+      margin-right: 5px; }
+    .errorTextBorder .errorCenter .errorText {
+      align-items: bottom;
+      color: red;
+      font-weight: bold; }
+
+.link {
+  font-size: 13px; }
+
+.word {
+  font-size: 20px; }

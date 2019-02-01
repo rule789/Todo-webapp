@@ -1,0 +1,38 @@
+<% layout('layout') %>
+<% stylesheet('/stylesheets/css/login.css')%>
+
+<!-- nav -->
+<% include template/nav %>
+
+<!-- 登入表格 -->
+<h1 class="text-center mt-5 loginTitleWord"><%= title %></h1>
+
+
+
+<form id="loginForm" action="/user/reset/<%= token %>" method="post">
+  <!-- new pwd -->
+  <div class="form-group row mb-4">
+    <label for="pwd" class="col-2 col-form-label loginTitle">新密碼</label>
+    <input type="password" id="pwd" class="form-control col-5" name="pwd" placeholder="至少6位元">
+    <!-- error -->
+    <div class="w-100"></div>
+    <div class="col-2"></div>
+    <small class="form-text checkResultText"></small>
+  </div>
+  <!-- check new pwd -->
+  <div class="form-group row mb-4">
+    <label for="pwd_again" class="col-2 col-form-label loginTitle">確認密碼</label>
+    <input type="password" id="pwd_again" class="form-control col-5" name="pwd_again">
+    <!-- error -->
+    <div class="w-100"></div>
+    <div class="col-2"></div>
+    <small class="form-text checkResultText"></small>
+  </div>
+</form>
+
+<!-- send -->
+<div class="d-flex mt-5">
+  <input form="loginForm" type="submit" id="send" class="btn btnSend px-5 mx-auto mb-3 mt-2" value="送出">
+</div>
+
+<% script('../../javascripts/resetPwdPage.js') %>

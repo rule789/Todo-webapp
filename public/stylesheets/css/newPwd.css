@@ -1,0 +1,39 @@
+@charset "UTF-8";
+body {
+  font: 17px "微軟正黑體", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0; }
+
+.nav_other {
+  color: #AAFFEE;
+  font-size: 20px; }
+  .nav_other:hover {
+    color: #fff; }
+
+.btnSend {
+  background: #FF8800;
+  color: #fff;
+  margin-top: 40px; }
+
+.center {
+  margin: 0 20vw;
+  font-size: 17px;
+  text-align: center; }
+
+.errorTextBorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 120px;
+  margin: auto;
+  background: #FFE4E1;
+  margin-bottom: 20px;
+  border-radius: 3px; }
+  .errorTextBorder .errorIcon {
+    height: 40%;
+    margin-right: 5px; }
+  .errorTextBorder .errorText {
+    align-items: bottom;
+    color: red;
+    font-weight: bold; }

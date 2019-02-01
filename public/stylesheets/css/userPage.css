@@ -1,0 +1,47 @@
+@charset "UTF-8";
+body {
+  font: 14px "微軟正黑體", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0; }
+
+.nav_other {
+  color: #AAFFEE;
+  font-size: 20px; }
+  .nav_other:hover {
+    color: #fff; }
+
+.picture_area {
+  height: 90vh; }
+  .picture_area .picture {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    overflow: hidden; }
+    .picture_area .picture img {
+      width: 80%;
+      height: 80%;
+      margin-top: 25px; }
+
+.changePic {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px; }
+
+.name_label {
+  font-size: 20px; }
+
+.nickname {
+  height: 100%;
+  font-size: 20px; }
+
+.nickname[readonly]:focus {
+  box-shadow: none;
+  border: 1px solid #ced4da; }
+
+.btn_bg {
+  background: #ffdea1;
+  border: 1px solid #DDD; }
+  .btn_bg:focus {
+    box-shadow: none; }
+  .btn_bg:hover {
+    background-color: #FFBB66; }

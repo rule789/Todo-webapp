@@ -1,0 +1,36 @@
+<% layout('layout') %>
+<% stylesheet('/stylesheets/css/opinion.css') %>
+
+<% include template/nav %>
+
+<div class="title">我有話想說</div>
+
+<div class="container my-5">
+  <div class="formAll">
+    <form action="#" class="form-horizontal">
+      <div class="form-group row">
+        <label class="col-1 col-form-label">名稱</label>
+        <div class="col">
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-1 col-form-label">Email</label>
+        <div class="col">
+          <input type="text" class="form-control" id="email" name="email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-1 col-form-label">意見</label>
+        <div class="col">
+          <textarea name="opinionText" id="opinionText" cols="30" rows="10" class="form-control"></textarea>
+          <input type="button" value="送出" class="form-control btn btnSend send">
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+</div>
+
+<% script('../javascripts/opinionPage.js') %>
