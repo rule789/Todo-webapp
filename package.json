@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "sass": "node-sass -w ./public/stylesheets/scss/ -o ./public/stylesheets/css/ --output-style expanded",
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha",
-    "test-watch": "nodemon --exec \"npm test\""
+    "test-watch": "node --exec \"npm test\""
   },
   "engines": {
     "node": "10.12.0"

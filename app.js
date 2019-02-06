@@ -15,6 +15,7 @@ const engine = require('ejs-locals');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var opinionRouter = require('./routes/opinion');
+var messageRouter = require('./routes/message');
 const {authenticate} = require('./middleware/authenticate.js');
 
 var app = express();
@@ -46,7 +47,9 @@ app.use(sassMiddleware({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/message', messageRouter);
 app.use('/user', usersRouter);
+// app.use('/message', messageRouter);
 app.use('/opinion', opinionRouter);
 app.use('/', indexRouter);
 
@@ -65,7 +68,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', {title: '出現問題', auth: req.session.token});
+  res.render('error', {title: '出現問題', auth: req.session.token || false});
 
   console.log([err.message, err.status, err.stack]);
   console.log(err);

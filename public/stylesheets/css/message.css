@@ -1,0 +1,51 @@
+@charset "UTF-8";
+body {
+  font: 17px "微軟正黑體", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0; }
+
+.nav_other {
+  color: #AAFFEE;
+  font-size: 20px; }
+  .nav_other:hover {
+    color: #fff; }
+
+.linkSend {
+  background: #FF8800;
+  color: #fff;
+  margin-top: 40px;
+  padding: 6px 48px;
+  margin-right: 20px; }
+
+.logAndReg {
+  display: flex;
+  justify-content: center; }
+
+.background_url {
+  background: url("/images/mel-poole-1243828-unsplash.jpg") no-repeat fixed center top;
+  background-size: cover;
+  min-height: 101vh; }
+  .background_url .message_word {
+    font-weight: bold; }
+  .background_url #send {
+    cursor: pointer;
+    border: none; }
+    .background_url #send:hover {
+      background: #17A2B8;
+      color: #FFF; }
+  .background_url .textBox {
+    display: flex;
+    height: 40px;
+    box-sizing: border-box;
+    margin-bottom: 5px; }
+    .background_url .textBox .messaged, .background_url .textBox .updateText {
+      font-size: 25px;
+      height: 100%;
+      padding: 5px; }
+    .background_url .textBox .updateText {
+      display: none;
+      height: 100%; }
+  .background_url .edit, .background_url .delete {
+    width: 20px; }
+    .background_url .edit img, .background_url .delete img {
+      width: 100%; }

@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
     data.reverse();
     // console.log(data);
     res.render('index', {
-    title: '留言版',
+    title: '我的小世界',
     message: data,
     auth: auth,
     });
@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
 
 // 新增 message
 router.post('/', function(req, res, next){
-  // console.log(req.id);
+  // console.log(req.body);
   let time = new Date().getTime();
   let message = new Message({
     text: req.body.message,
@@ -125,7 +125,7 @@ let storage = multer.diskStorage({
 
 let upload = multer({
   storage: storage,
-  limits: {fileSize: 100000}
+  limits: {fileSize: 10000}
 });
 
 
