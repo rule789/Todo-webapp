@@ -47,9 +47,9 @@ app.use(sassMiddleware({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/message', messageRouter);
+
 app.use('/user', usersRouter);
-// app.use('/message', messageRouter);
+app.use('/message', messageRouter);
 app.use('/opinion', opinionRouter);
 app.use('/', indexRouter);
 
