@@ -30,13 +30,14 @@ router.get('/', (req, res) => {
           nickname: user.nickname,
           msg: msg,
         });
+        console.log('dataAll', dataAll.length, 'dataLength', dataLength);
         if( dataAll.length == dataLength ){
           // 時間排序
           dataAll = dataAll.sort(function(x, y){
             return x.msg.time < y.msg.time ? 1:-1;
           });
 
-        // console.log(dataAll);
+        console.log('render');
           res.render('message', {
             title: '留言板',
             // nickname:
