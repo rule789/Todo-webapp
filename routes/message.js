@@ -24,29 +24,29 @@ router.get('/', (req, res) => {
     var dataLength = data.length;
     console.log(dataLength);
     // find each msg's nickname
-    // async.each(data, function(msg, err){
-    //   User.findOne({_id: msg._creator}).then((user)=> {
-    //     // 組合
-    //     dataAll.push({
-    //       nickname: user.nickname,
-    //       msg: msg,
-    //     });
-    //     console.log('dataAll', dataAll.length, 'dataLength', dataLength);
-    //     if( dataAll.length == dataLength ){
-    //       // 時間排序
-    //       dataAll = dataAll.sort(function(x, y){
-    //         return x.msg.time < y.msg.time ? 1:-1;
-    //       });
+    async.each(data, function(msg, err){
+      User.findOne({_id: msg._creator}).then((user)=> {
+        // 組合
+        dataAll.push({
+          nickname: user.nickname,
+          msg: msg,
+        });
+        console.log('dataAll', dataAll.length, 'dataLength', dataLength);
+        if( dataAll.length == dataLength ){
+          // 時間排序
+          dataAll = dataAll.sort(function(x, y){
+            return x.msg.time < y.msg.time ? 1:-1;
+          });
 
         console.log('render');
-          // res.render('message', {
-          //   title: '留言板',
-          //   // nickname:
-          //   message: dataAll,
-          //   auth: req.session.token || false,
-          // });
-        // }
-      // })
+          res.render('message', {
+            title: '留言板',
+            // nickname:
+            message: dataAll,
+            auth: req.session.token || false,
+          });
+        }
+      })
     });
   });
 
