@@ -9,48 +9,40 @@ const {User} = require('../model/user_model.js');
 const {authenticate} = require('../middleware/authenticate.js');
 
 
-// let createUser = function(id){
-//   return new Promise((resolve, reject) => {
-//     User.findOne({_id: id}, function(err, user){
-//       resolve(user);
-//     });
-//   });
-// }
 
 router.get('/', (req, res) => {
-  let dataAll = [];
   // read all msg
-  newMessage.find().then((data) => {
-    var dataLength = data.length;
-    console.log(dataLength);
-    // find each msg's nickname
-    async.each(data, function(msg, err){
-      User.findOne({_id: msg._creator}).then((user)=> {
-        // 組合
-        dataAll.push({
-          nickname: user.nickname,
-          msg: msg,
-        });
-        console.log('dataAll', dataAll.length, 'dataLength', dataLength);
-        if( dataAll.length == dataLength ){
-          // 時間排序
-          dataAll = dataAll.sort(function(x, y){
-            return x.msg.time < y.msg.time ? 1:-1;
+  newMessage.find().then((msg) => {
+    let dataAll = [];
+    let dataLength = msg.length;
+
+      // find nickname
+      msg.forEach((msg) => {
+        User.findOne({_id: msg._creator}).then((user)=> {
+          dataAll.push({
+            nickname: user.nickname,
+            msg: msg,
           });
 
-        console.log('render');
-          res.render('message', {
-            title: '留言板',
-            // nickname:
-            message: dataAll,
-            auth: req.session.token || false,
-          });
-        }
-      })
-    });
-  });
+          // sort by time
+          if(dataAll.length === dataLength){
+            dataAll = dataAll.sort(function(x, y){
+            return x.msg.time < y.msg.time ? 1:-1;
+            });
+
+            res.render('message', {
+              title: '留言板',
+              message: dataAll,
+              auth: req.session.token || false,
+            });
+          }
+        });
+      });
+   });
 
 });
+
+
 
 router.post('/', authenticate, (req, res) => {
   // console.log(req.body, req.id, req.nick);
