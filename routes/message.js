@@ -13,12 +13,14 @@ const {authenticate} = require('../middleware/authenticate.js');
 router.get('/', (req, res) => {
   // read all msg
   newMessage.find().then((msg) => {
-    let dataAll = [];
-    let dataLength = msg.length;
+    console.log(msg.length);
+    if(msg.length !== 0){
+      let dataAll = [];
+      let dataLength = msg.length;
 
-      // find nickname
       msg.forEach((msg) => {
         User.findOne({_id: msg._creator}).then((user)=> {
+
           dataAll.push({
             nickname: user.nickname,
             msg: msg,
@@ -26,6 +28,7 @@ router.get('/', (req, res) => {
 
           // sort by time
           if(dataAll.length === dataLength){
+
             dataAll = dataAll.sort(function(x, y){
             return x.msg.time < y.msg.time ? 1:-1;
             });
@@ -33,12 +36,26 @@ router.get('/', (req, res) => {
             res.render('message', {
               title: '留言板',
               message: dataAll,
+              // message: [],
               auth: req.session.token || false,
             });
+
           }
+
         });
       });
-   });
+    } else {
+      res.render('message', {
+        title: '留言板',
+        message: [],
+        auth: req.session.token || false,
+      });
+    }
+
+  }).catch((e) => {
+    console.log(e);
+  });
+
 
 });
 

@@ -24,6 +24,7 @@
         <!-- 已記錄的message -->
         <div class="row mt-5">
           <div class=" list col-7 ml-2 mb-5">
+
           <% for (item in message) {%>
             <div data-id = <%= message[item].msg._id%> class=" bg-white p-3 border-bottom eachMessage m-1">
               <div class="textBox">
@@ -43,6 +44,7 @@
 
             </div>
           <% } %>
+
           </div>
         </div>
 
