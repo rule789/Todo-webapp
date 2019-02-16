@@ -7,7 +7,12 @@ let list = document.querySelector('.list');
 if(send_button){
   send_button.addEventListener('click', function(e){
     e.preventDefault();
-    var add_message = message_input.value;
+    let add_message = message_input.value.trim();
+
+  if(add_message.length == 0){
+    return message_input.value = '';
+  }
+
     // console.log(add_message);
     let str =
             `<div class=" bg-white p-3 border-bottom eachMessage m-1">

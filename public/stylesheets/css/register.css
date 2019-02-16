@@ -28,3 +28,6 @@ body {
 
 .checkResultText {
   display: none; }
+
+.color-gray {
+  color: gray; }

@@ -71,6 +71,7 @@ router.post('/register', function(req, res) {
   let user = new User({
     email: req.body.account,
     password: req.body.pwd,
+    nickname: req.body.nickname,
   });
 
   let token = jwt.sign({id: user._id}, process.env.JWT_SECRET).toString();

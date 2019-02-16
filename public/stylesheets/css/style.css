@@ -13,7 +13,7 @@ body {
 .background_url {
   background: url("/images/mel-poole-1243828-unsplash.jpg") no-repeat fixed center top;
   background-size: cover;
-  min-height: 101vh; }
+  min-height: 100vh; }
   .background_url .message_word {
     font-weight: bold; }
   .background_url #send {

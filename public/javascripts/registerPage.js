@@ -14,7 +14,7 @@ $(account).on('blur', function(e){
       let notice = $('#account').siblings('small');
 
       if(result == 'accountFormatError'){
-        $(notice).css('color','red').text('**格式有錯喔!!').show();
+        $(notice).css('color','red').text('**格式有錯').show();
       } else if (result == 'existed') {
         $(notice).css('color', 'red').text('**帳號已存在').show();
       } else if (result == 'ok') {
@@ -37,7 +37,7 @@ $(pwd).on('blur',function(e){
     data: {pwd: pwdText},
     success: function(res){
       if(res.result == 'pwdFormatError') {
-        $(pwd).siblings('small').text('**要6位數喔!!').css('color','red').show();
+        $(pwd).siblings('small').text('**要6位數').css('color','red').show();
       } else if (res.result == 'ok') {
         $(pwd).siblings('small').hide();
       }
@@ -57,6 +57,18 @@ $('#pwd_again').on('blur', function(e){
     $('#pwd_again').siblings('small').hide();
   }
 });
+
+
+// 暱稱填寫
+$('#nickname').on('blur', function(e){
+  if( $(this).val() == ""){
+
+    $('#nickname').siblings('small').text('**暱稱沒填').css('color','red');
+  } else {
+    $('#nickname').siblings('small').text('註冊後暱稱可以再改變喔!').css('color','gray');
+  }
+});
+
 
 // 註冊送出 驗證
 $(send).on('click', function(e){

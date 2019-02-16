@@ -2,3 +2,4 @@ node_modules/
 model/config.json
 public/stylesheets/scss/
 test/
+routes/async_waterfall.js

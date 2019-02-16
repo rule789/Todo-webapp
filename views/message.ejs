@@ -1,58 +1,62 @@
 <% layout('layout') %>
 <% stylesheet('/stylesheets/css/message.css')%>
 
-<% include template/nav %>
 
-<div class="container-fluid background_url ">
+<div class="background_url">
+  <!-- nav -->
+  <% include template/nav %>
 
   <div class="container-fluid">
-    <div class="row">
-      <h1 class="message_word m-3 col-3 text-white"><%= title %></h1>
+
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="message_word m-3 col-3 text-white"><%= title %></h1>
 
 
-      <div class="col">
-        <!-- 輸入 -->
-        <% if (auth) { %>
-        <form action="#" class="m-3">
-          <div class="row form-group form-inline">
-            <textarea class="message form-control col-7" name="message" placeholder="安安你好"></textarea>
-            <input type="submit" class=" form-control col-1 ml-3 align-self-end send" id="send" value="送出">
-          </div>
-        </form>
-        <% } %>
-
-        <!-- 已記錄的message -->
-        <div class="row mt-5">
-          <div class=" list col-7 ml-2 mb-5">
-
-          <% for (item in message) {%>
-            <div data-id = <%= message[item].msg._id%> class=" bg-white p-3 border-bottom eachMessage m-1">
-              <div class="textBox">
-                <!-- 每一個twitter -->
-                <div class="messaged">
-                  <%= message[item].nickname %> 說：
-                  <%= message[item].msg.text %>
-                </div>
-              </div>
-
-              <!-- <div class="row"> -->
-                <!-- delete icon -->
-<!--                 <div class="update ml-auto edit mr-3">
-                  <img src="/images/rubbish-bin.svg" alt="delete" class="text-secondary">
-                </div> -->
-              <!-- </div> -->
-
+        <div class="col">
+          <!-- 輸入 -->
+          <% if (auth) { %>
+          <form action="#" class="m-3">
+            <div class="row form-group form-inline">
+              <textarea class="message form-control col-7" name="message" placeholder="安安你好"></textarea>
+              <input type="submit" class=" form-control col-1 ml-3 align-self-end send" id="send" value="送出">
             </div>
+          </form>
           <% } %>
 
-          </div>
-        </div>
+          <!-- 已記錄的message -->
+          <div class="row mt-5">
+            <div class=" list col-7 ml-2 mb-5">
 
+            <% for (item in message) {%>
+              <div data-id = <%= message[item].msg._id%> class=" bg-white p-3 border-bottom eachMessage m-1">
+                <div class="textBox">
+                  <!-- 每一個twitter -->
+                  <div class="messaged">
+                    <%= message[item].nickname %> 說：
+                    <%= message[item].msg.text %>
+                  </div>
+                </div>
+
+                <!-- <div class="row"> -->
+                  <!-- delete icon -->
+  <!--                 <div class="update ml-auto edit mr-3">
+                    <img src="/images/rubbish-bin.svg" alt="delete" class="text-secondary">
+                  </div> -->
+                <!-- </div> -->
+
+              </div>
+            <% } %>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
+
+
   </div>
-
-
-</div>
+<div>
 
 <% script('../javascripts/NewMsg.js') %>

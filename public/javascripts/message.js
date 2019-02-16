@@ -7,8 +7,14 @@ let list = document.querySelector('.list');
 // 新增message
 send_button.addEventListener('click', function(e){
   e.preventDefault();
-  let add_message = message_input.value;
-    // console.log(add_message);
+  let add_message = message_input.value.trim();
+  // console.log(add_message.length);
+
+  if(add_message.length == 0){
+    // alert('nothing');
+    return message_input.value = '';
+  }
+
   let str =
           `<div class=" bg-white p-3 border-bottom eachMessage">
             <div class="textBox">
