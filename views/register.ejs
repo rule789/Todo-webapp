@@ -11,49 +11,72 @@
 <!-- nav -->
 <%- include template/nav %>
 
+
+
+<div class="bg-light px-5 py-5 d-flex background">
+  <div class="function">
+    <br>
+    <div class="function-describe mb-5">免費享有所有功能</div>
+    <div class="my-4">
+      <div class="function-each">個人事項記載</div>
+      <div class="function-one-describe my-1">隨你怎麼寫</div>
+    </div>
+    <div class="my-5">
+      <div class="function-each">留言板</div>
+      <div class="function-one-describe my-1">嘰哩呱啦</div>
+    </div>
+  </div>
+
 <!-- 註冊表單 -->
-<div class="bg-light w-100 p-5">
-  <div class="text-center">
-    <h1 class="register_word"><%= title %></h1>
+<!-- <div class="row"> -->
+  <div class="text-center form_all">
+    <div class="mx-auto mt-4 mb-4">
+      <h1 class="register_word"><%= title %></h1>
+    </div>
 
-    <form id="registerForm" action="/user/register" class="form-group container formArea" method="post">
+    <form id="registerForm" action="/user/register" class="form-group container-fluid formArea" method="post">
 
       <div class="row mb-4">
-        <label for="account" class="col-2 col-form-label label_word">帳號</label>
-        <input type="text" id="account" name="account" placeholder="abc123@example.com" class="form-control col-5">
+        <label for="account" class="col-3 col-form-label label_word">帳號</label>
+        <input type="text" id="account" name="account" placeholder="abc123@example.com" class="form-control col-9">
         <div class="w-100"></div>
-        <div class="col-2"></div>
-        <small class="form-text checkResultText"></small>
-      </div>
-
-      <div class="row mb-4 ">
-        <label for="pwd"  class="col-2 col-form-label label_word">密碼</label>
-        <input type="password" id="pwd" name="pwd" placeholder="至少6位元" class="form-control col-5">
-        <div class="w-100"></div>
-        <div class="col-2"></div>
+        <div class="col-3"></div>
         <small class="form-text checkResultText"></small>
       </div>
 
       <div class="row mb-4">
-        <label for="pwd_again" class="col-2 col-form-label label_word ">重新輸入密碼</label>
-        <input type="password" id="pwd_again" class="form-control col-5">
+        <label for="pwd"  class="col-3 col-form-label label_word">密碼</label>
+        <input type="password" id="pwd" name="pwd" placeholder="至少6位元" class="form-control col-9">
         <div class="w-100"></div>
-        <div class="col-2"></div>
+        <div class="col-3"></div>
         <small class="form-text checkResultText"></small>
       </div>
 
       <div class="row mb-4">
-        <label for="pwd_again" class="col-2 col-form-label label_word ">暱稱</label>
-        <input type="text" name="nickname" id="nickname" class="form-control col-5">
+        <label for="pwd_again" class="col-3 col-form-label label_word ">確認密碼</label>
+        <input type="password" id="pwd_again" class="form-control col-9">
         <div class="w-100"></div>
-        <div class="col-2"></div>
+        <div class="col-3"></div>
+        <small class="form-text checkResultText"></small>
+      </div>
+
+      <div class="row mb-4">
+        <label for="pwd_again" class="col-3 col-form-label label_word ">暱稱</label>
+        <input type="text" name="nickname" id="nickname" class="form-control col-9">
+        <div class="w-100"></div>
+        <div class="col-3"></div>
         <small class="form-text color-gray">註冊後暱稱可以再改變喔!</small>
       </div>
+
+
 
     </form>
 
     <input form="registerForm" type="submit" id="send" value="送出" class="btn btnSend px-5" >
+
   </div>
+<!-- </div> -->
+
 
 </div>
 

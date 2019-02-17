@@ -13,21 +13,31 @@ body {
 .btnSend {
   background: #FF8800;
   color: #fff;
-  margin-top: 40px; }
+  margin-top: 25px; }
 
-.register_word {
-  margin-bottom: 60px; }
-
-.formArea {
-  font-size: 15px;
-  margin-left: 300px; }
-
-.label_word {
-  font-size: 17px;
-  vertical-align: middle; }
-
-.checkResultText {
-  display: none; }
-
-.color-gray {
-  color: gray; }
+.background {
+  height: 89vh; }
+  .background .function {
+    width: 35vw;
+    padding: 3vw 5vw; }
+    .background .function .function-describe {
+      font-weight: bold;
+      font-size: 38px; }
+    .background .function .function-each {
+      font-size: 33px; }
+  .background .form_all {
+    border: 1px solid #444;
+    border-radius: 2px;
+    background: #F8F8FF;
+    margin-left: 5vw; }
+    .background .form_all .formArea {
+      font-size: 15px;
+      width: 40vw;
+      padding-right: 5vw; }
+    .background .form_all .label_word {
+      font-size: 17px;
+      vertical-align: middle; }
+    .background .form_all .checkResultText {
+      display: none; }
+    .background .form_all .color-gray {
+      color: gray; }
