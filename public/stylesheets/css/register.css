@@ -13,10 +13,10 @@ body {
 .btnSend {
   background: #FF8800;
   color: #fff;
-  margin-top: 25px; }
+  margin-top: 20px; }
 
 .background {
-  height: 89vh; }
+  height: 80vh; }
   .background .function {
     width: 35vw;
     padding: 3vw 5vw; }
