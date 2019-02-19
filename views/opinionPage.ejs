@@ -1,6 +1,16 @@
 <% layout('layout') %>
 <% stylesheet('/stylesheets/css/opinion.css') %>
 
+<!-- loading show -->
+<div class="ajax-loader">
+  <img src="/images/ajax-loader.svg" alt="寄出中">
+  <div class="loader-finish">
+    <div class="finish-word-div">
+      <div class="finish-word">意見已送出</div>
+    </div>
+  </div>
+</div>
+
 <% include template/nav %>
 
 <div class="title">我有話想說</div>
@@ -17,7 +27,7 @@
       <div class="form-group row">
         <label class="col-1 col-form-label">Email</label>
         <div class="col">
-          <input type="text" class="form-control" id="email" name="email">
+          <input type="email" class="form-control" id="email" name="email">
         </div>
       </div>
       <div class="form-group row">
