@@ -9,21 +9,18 @@ const {authenticate} = require('../middleware/authenticate.js');
 
 router.use(authenticate);
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   let auth = req.token;
   let id = req.id;
-  // console.log('req id', req.id);
   Message.find({_creator: id}).then((data) => {
     data.reverse();
-    // console.log(data);
     res.render('index', {
     title: '我的小世界',
     message: data,
     auth: auth,
     });
   }).catch((e) => {
-    // console.log(e);
+    console.log(e);
     next(e);
   });
 });
@@ -31,7 +28,6 @@ router.get('/', function(req, res, next) {
 
 // 新增 message
 router.post('/', function(req, res, next){
-  // console.log(req.body);
   let time = new Date().getTime();
   let message = new Message({
     text: req.body.message,
@@ -40,24 +36,17 @@ router.post('/', function(req, res, next){
   });
 
   message.save().then((doc) => {
-    // console.log('doc',doc);
     res.send(doc);
   }, (e)=> {
-    // res.send(e);
-    // console.log(e);
     next(e);
-
   });
 });
 
 // 刪除message
 router.delete('/message/delete', function(req, res){
-  // console.log(req.body);
   Message.findOneAndDelete({_id: req.body.id}).then((msg)=> {
-    // console.log(msg);
     Message.find({_creator: msg._creator}).then((data) => {
       res.send(data);
-      // console.log(data);
     });
   }).catch((e)=> {
     res.status(404).send();
@@ -67,7 +56,6 @@ router.delete('/message/delete', function(req, res){
 
 // 修改message
 router.patch('/patch/message', (req, res)=> {
-  // console.log(req.body);
   Message.findOneAndUpdate(
     {_id: req.body.id},
     {
@@ -103,7 +91,6 @@ router.post('/user/nickname', (req, res) => {
   console.log(req.body);
   let nick = req.body.nickname;
   let token = req.session.token;
-  // console.log('nick', nick, 'token', token);
   User.findOneAndUpdate({token},
     {$set: {
     nickname: nick,
@@ -159,9 +146,4 @@ router.post('/user/picture', (req, res, next)=> {
 });
 
 
-
-
-
 module.exports = router;
-
-

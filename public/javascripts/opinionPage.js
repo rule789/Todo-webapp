@@ -2,7 +2,7 @@ let name = document.getElementById('name');
 let email = document.getElementById('email');
 let opinion = document.getElementById('opinionText');
 let send = document.querySelector('.send');
-let ajax_loader = document.querySelector('.ajax-loader');
+let ajax_loader = document.querySelector('.ajaxLoader');
 
 $(send).on('click', function(e){
   if(!name.value || !email.value || !opinion.value){
@@ -23,7 +23,7 @@ $(send).on('click', function(e){
       if(data = "留言成功"){
         // loading 完成畫面
         $(ajax_loader).find('img').fadeOut(100, function(){
-          $(ajax_loader).find('.loader-finish').fadeIn(700, function() {
+          $(ajax_loader).find('.loaderFinish').fadeIn(700, function() {
             // 重新載入網頁
             setTimeout( function(){window.location.href = location;}, 1000);
           });

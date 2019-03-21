@@ -1,8 +1,6 @@
-
 // 暱稱
 let nick = document.getElementById('nickChange');
 let nickBtn = document.getElementById('nickBtn');
-
 
 if(nick.value){
   $(nick).attr('readonly', true);
@@ -10,7 +8,6 @@ if(nick.value){
 }
 
 nickBtn.addEventListener('click', function(e){
-  // console.log(nickBtn.innerHTML);
   e.preventDefault();
   if(nick.value && nickBtn.innerHTML == '確定'){
     $.ajax({
@@ -18,7 +15,6 @@ nickBtn.addEventListener('click', function(e){
       type: 'post',
       data: {nickname: nick.value},
       success: function(res){
-        console.log(res);
         nickBtn.innerHTML = '修改';
         $(nick).attr('readonly', true);
       }
@@ -67,12 +63,12 @@ function uploadFile(){
       $("#result").html("與伺服器通訊發生錯誤");
     }
   });
-
 }
+
 
 // 按鈕新增事件
 let upload = document.getElementById('upload');
-  upload.addEventListener('click', function() {
-    uploadFile();
-  });
+upload.addEventListener('click', function() {
+  uploadFile();
+});
 

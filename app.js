@@ -5,7 +5,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// const sass = require('node-sass');
 const sassMiddleware = require('node-sass-middleware');
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -65,7 +64,6 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-
   // render the error page
   res.status(err.status || 500);
   res.render('error', {title: '出現問題', auth: req.session.token || false});
@@ -73,8 +71,6 @@ app.use(function(err, req, res, next) {
   console.log([err.message, err.status, err.stack]);
   console.log(err);
 });
-
-
 
 
 module.exports = app;

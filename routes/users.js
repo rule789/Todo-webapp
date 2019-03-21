@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const jwt = require('jsonwebtoken');
 const validator = require('validator');
 const nodemailer = require('nodemailer');
@@ -9,13 +9,6 @@ const {mongoose} = require('../model/connect.js');
 const {Message} = require('../model/message_model.js');
 const {User} = require('../model/user_model.js');
 const {sendMail} = require('./utils/sendMail.js');
-
-
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.render('userPage');
-// });
-
 
 
 // register page
@@ -29,8 +22,6 @@ router.get('/register', function(req, res) {
 
 // account validator
 router.post('/register/validator_account', function(req, res) {
-  // console.log(req.body);
-
   // 驗證email格式
   let account_format_error = validator.isEmail(req.body.account); // true flase
   if(!account_format_error){
@@ -38,7 +29,6 @@ router.post('/register/validator_account', function(req, res) {
   } else {
 
     User.find({email: req.body.account}).then((user) => {
-      // console.log(user);
       // 重複帳號
       if(user[0]) {
         res.send({result: 'existed'});
@@ -66,8 +56,6 @@ router.post('/register/validator_pwd', function(req, res) {
 
 // send register
 router.post('/register', function(req, res) {
-  // console.log(req.body);
-
   let user = new User({
     email: req.body.account,
     password: req.body.pwd,
@@ -97,7 +85,6 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', function(req, res){
-  // console.log(req.body);
   User.find({email: req.body.email}).then((user)=> {
     // console.log(user);
     // console.log(req.body);
@@ -119,9 +106,6 @@ router.post('/login', function(req, res){
 router.get('/password/new', function(req, res) {
   let error = req.flash('error');
   let email = req.flash('userEmail');
-  // console.log(email);
-  // console.log(error);
-  // console.log(error.length);
   res.render('newPassword', {
     error,
     email,
@@ -132,7 +116,6 @@ router.get('/password/new', function(req, res) {
 
 // 寄驗證信
 router.post('/password/new', function(req, res, next) {
-  // console.log(req.body);
   let token;
   let host = req.headers.host;
 
@@ -152,7 +135,6 @@ router.post('/password/new', function(req, res, next) {
     user.resetPwdExp = Date.now() + 3600000;
 
     user.save().then((user) => {
-      // console.log(user);
       // 寄信
       let sendContent = {
         from: '"👻 Titi " <chiasystem1@gmail.com>',
@@ -172,8 +154,6 @@ router.post('/password/new', function(req, res, next) {
           return res.redirect('/user/password/new');
         }
 
-        // req.flash('info', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
-        // res.send({status : 'success', message : 'An e-mail has been sent to ' + user.email + ' with further instructions.'});
         res.redirect('/user/password/mail');
       });
     });
@@ -192,11 +172,7 @@ router.get('/password/mail', (req, res) => {
 
 // 點進郵件連結
 router.get('/reset/:token', function(req, res) {
-  // console.log(req.params);
-  // => { token: '1f0eeef9a342bc66d31613fac55e2054cc9f7f03' }
-
   User.findOne({ resetPwdToken: req.params.token, resetPwdExp: { $gt: Date.now() } }, function(err, user) {
-    // console.log(user);
     if (!user) {
       req.flash('error', '驗證無效或過期');
       return res.redirect('/user/password/new');
@@ -213,17 +189,13 @@ router.get('/reset/:token', function(req, res) {
 
 // 送出新密碼
 router.post('/reset/:token', (req, res) => {
-  // console.log(req.body);
-  // console.log(req.params.token);
-
   User.findOneAndUpdate(
     {resetPwdToken: req.params.token},
     { $set:{password: req.body.pwd} },
     {new: true}
-    ).then((user) => {
-      // console.log(user);
-      req.session.token = user.token;
-      res.redirect('/');
+  ).then((user) => {
+    req.session.token = user.token;
+    res.redirect('/');
   });
 });
 
@@ -236,5 +208,3 @@ router.get('/logout', (req, res) => {
 
 
 module.exports = router;
-
-

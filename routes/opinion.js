@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
-  console.log(req.body);
   let sendContent = {
     from: `${req.body.name} <${req.body.email}>`,
     to: '"Titi " <chiasystem1@gmail.com>',

@@ -29,13 +29,6 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-// UserSchema.methods.generateToken =
-// function() {
-//   let user = this;
-//   let token = jwt.sing({})
-
-// };
-
 
 const User = mongoose.model('User', UserSchema);
 

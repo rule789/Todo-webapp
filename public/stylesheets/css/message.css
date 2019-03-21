@@ -4,10 +4,10 @@ body {
   padding: 0;
   margin: 0; }
 
-.nav_other {
+.navOther {
   color: #AAFFEE;
   font-size: 20px; }
-  .nav_other:hover {
+  .navOther:hover {
     color: #fff; }
 
 .linkSend {
@@ -21,31 +21,31 @@ body {
   display: flex;
   justify-content: center; }
 
-.background_url {
+.backgroundUrl {
   background: url("/images/olivia-bauso-1364651-unsplash.jpg") no-repeat fixed center top;
   background-size: cover;
   min-height: 100vh; }
-  .background_url .message_word {
+  .backgroundUrl .message_word {
     font-weight: bold; }
-  .background_url #send {
+  .backgroundUrl #send {
     cursor: pointer;
     border: none; }
-    .background_url #send:hover {
+    .backgroundUrl #send:hover {
       background: #17A2B8;
       color: #FFF; }
-  .background_url .textBox {
+  .backgroundUrl .textBox {
     display: flex;
     height: 40px;
     box-sizing: border-box;
     margin-bottom: 5px; }
-    .background_url .textBox .messaged, .background_url .textBox .updateText {
+    .backgroundUrl .textBox .messaged, .backgroundUrl .textBox .updateText {
       font-size: 25px;
       height: 100%;
       padding: 5px; }
-    .background_url .textBox .updateText {
+    .backgroundUrl .textBox .updateText {
       display: none;
       height: 100%; }
-  .background_url .edit, .background_url .delete {
+  .backgroundUrl .edit, .backgroundUrl .delete {
     width: 20px; }
-    .background_url .edit img, .background_url .delete img {
+    .backgroundUrl .edit img, .backgroundUrl .delete img {
       width: 100%; }

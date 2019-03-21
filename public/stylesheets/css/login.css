@@ -4,10 +4,10 @@ body {
   padding: 0;
   margin: 0; }
 
-.nav_other {
+.navOther {
   color: #AAFFEE;
   font-size: 20px; }
-  .nav_other:hover {
+  .navOther:hover {
     color: #fff; }
 
 .btnSend {

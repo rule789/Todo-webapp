@@ -4,10 +4,10 @@ body {
   padding: 0;
   margin: 0; }
 
-.nav_other {
+.navOther {
   color: #AAFFEE;
   font-size: 20px; }
-  .nav_other:hover {
+  .navOther:hover {
     color: #fff; }
 
 .btnSend {
@@ -20,24 +20,24 @@ body {
   .background .function {
     width: 35vw;
     padding: 3vw 5vw; }
-    .background .function .function-describe {
+    .background .function .functionDescribe {
       font-weight: bold;
       font-size: 38px; }
-    .background .function .function-each {
+    .background .function .functionEach {
       font-size: 33px; }
-  .background .form_all {
+  .background .formAll {
     border: 1px solid #444;
     border-radius: 2px;
     background: #F8F8FF;
     margin-left: 5vw; }
-    .background .form_all .formArea {
+    .background .formAll .formArea {
       font-size: 15px;
       width: 40vw;
       padding-right: 5vw; }
-    .background .form_all .label_word {
+    .background .formAll .labelWord {
       font-size: 17px;
       vertical-align: middle; }
-    .background .form_all .checkResultText {
+    .background .formAll .checkResultText {
       display: none; }
-    .background .form_all .color-gray {
+    .background .formAll .colorGray {
       color: gray; }

@@ -8,10 +8,8 @@ let list = document.querySelector('.list');
 send_button.addEventListener('click', function(e){
   e.preventDefault();
   let add_message = message_input.value.trim();
-  // console.log(add_message.length);
 
   if(add_message.length == 0){
-    // alert('nothing');
     return message_input.value = '';
   }
 
@@ -66,9 +64,7 @@ message_input.addEventListener('keyup', function(e){
 // 刪除message
 $(list).on('click', '.delete', function(e) {
   let deleteOne = $(this).closest(".eachMessage")[0];
-  // console.log(deleteOne);
   let id = deleteOne.dataset.id;
-  // let id = e.target.parentNode.parentNode.parentNode.dataset.id;
   $.ajax({
     url: '/message/delete',
     type: 'delete',
@@ -127,7 +123,6 @@ $(list).on('keyup', '.updateText', function(e){
   let updateOne = $(this).closest('.eachMessage')[0];
   let updateText = $(updateOne).find('.updateText');
   let updateImg = $(updateOne).find('.update');
-  // console.log(updateImg);
   if(e.keyCode === 13){
   updateImg.click();
   };

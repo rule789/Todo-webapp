@@ -10,7 +10,6 @@ $(account).on('blur', function(e){
     data: {account: accountText},
     success: function(res){
       let result = res.result;
-      console.log(res);
       let notice = $('#account').siblings('small');
 
       if(result == 'accountFormatError'){
@@ -80,7 +79,6 @@ $(send).on('click', function(e){
     checkError = $(checkWhich).css('display');
     if( checkError != 'none' ){
       e.preventDefault();
-      // alert('帳號或密碼有誤喔');
     }
   }
 });
