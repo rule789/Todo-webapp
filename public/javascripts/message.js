@@ -53,11 +53,11 @@ send_button.addEventListener('click', function(e){
 
 
 // 用enter 新增
-message_input.addEventListener('keyup', function(e){
-  if(e.keyCode === 13){
-    send_button.click();
-  };
-});
+// message_input.addEventListener('keyup', function(e){
+//   if(e.keyCode === 13){
+//     send_button.click();
+//   };
+// });
 
 
 
