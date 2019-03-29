@@ -4,11 +4,11 @@ body {
   padding: 0;
   margin: 0; }
 
-.navOther {
-  color: #AAFFEE;
+.navOther, .navbar-dark {
+  color: #AAFFEE !important;
   font-size: 20px; }
-  .navOther:hover {
-    color: #fff; }
+  .navOther:hover, .navbar-dark:hover {
+    color: #fff !important; }
 
 .picture_area {
   height: 90vh; }

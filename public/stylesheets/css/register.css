@@ -4,14 +4,11 @@ body {
   padding: 0;
   margin: 0; }
 
-.navOther {
-  color: #AAFFEE;
+.navOther, .navbar-dark {
+  color: #AAFFEE !important;
   font-size: 20px; }
-  .navOther:hover {
-    color: #fff; }
-
-.navbar-toggle .icon-bar {
-  background-color: #fff; }
+  .navOther:hover, .navbar-dark:hover {
+    color: #fff !important; }
 
 .btnSend {
   background: #FF8800;
