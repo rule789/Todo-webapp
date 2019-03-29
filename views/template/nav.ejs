@@ -1,34 +1,49 @@
-<nav class="navbar navbar-expand-sm bg-info">
-  <ul class="navbar-nav p-2 link">
-    <li class="nav-item">
-      <a href="/" id="opinion" class="nav-link navOther">首頁</a>
-    </li>
-    <li class="nav-item">
-      <a href="/message" id="msgBoard" class="nav-link navOther">留言板</a>
-    </li>
-    <% if (auth) { %>
-    <li class="nav-item">
-      <a href="/user/profile" id="user_region" class="nav-link  navOther">個人專區</a>
-    </li>
-    <% } %>
-    <div class="nav-item">
-      <a href="/opinion" id="opinion" class="nav-link  navOther">我有意見</a>
-    </div>
-  </ul>
-  <ul class="navbar-nav ml-auto">
+<nav class="navbar navbar-expand-sm navbar-dark bg-info">
 
-    <% if (auth) { %>
-    <div class="nav-item">
-      <a href="/user/logout" id="logout" class="nav-link  navOther">登出</a>
-    </div>
-    <% } else { %>
-    <div class="nav-item">
-      <a href="/user/register" id="register" class="nav-link navOther" >註冊</a>
-    </div>
-    <div class="nav-item">
-      <a href="/user/login" id="login" class="nav-link navOther">登入</a>
-    </div>
-    <% } %>
-  </ul>
+  <!-- hamburger -->
+  <!-- 漢堡式選單按鈕 -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- .navbar-toggler-icon 漢堡式選單Icon -->
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav p-2 link">
+      <li class="nav-item">
+        <a href="/" id="opinion" class="nav-link navOther">首頁</a>
+      </li>
+      <li class="nav-item">
+        <a href="/message" id="msgBoard" class="nav-link navOther">留言板</a>
+      </li>
+      <% if (auth) { %>
+      <li class="nav-item">
+        <a href="/user/profile" id="user_region" class="nav-link  navOther">個人專區</a>
+      </li>
+      <% } %>
+      <div class="nav-item">
+        <a href="/opinion" id="opinion" class="nav-link  navOther">我有意見</a>
+      </div>
+    </ul>
+
+    <ul class="navbar-nav  p-2 ml-auto">
+
+      <% if (auth) { %>
+      <div class="nav-item">
+        <a href="/user/logout" id="logout" class="nav-link  navOther">登出</a>
+      </div>
+      <% } else { %>
+      <div class="nav-item">
+        <a href="/user/register" id="register" class="nav-link navOther" >註冊</a>
+      </div>
+      <div class="nav-item">
+        <a href="/user/login" id="login" class="nav-link navOther">登入</a>
+      </div>
+      <% } %>
+    </ul>
+
+  </div>
 </nav>
 

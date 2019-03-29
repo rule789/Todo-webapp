@@ -10,13 +10,16 @@ body {
   .navOther:hover {
     color: #fff; }
 
+.navbar-toggle .icon-bar {
+  background-color: #fff; }
+
 .btnSend {
   background: #FF8800;
   color: #fff;
   margin-top: 20px; }
 
 .background {
-  height: 80vh; }
+  height: 600px; }
   .background .function {
     width: 35vw;
     padding: 3vw 5vw; }
@@ -26,6 +29,7 @@ body {
     .background .function .functionEach {
       font-size: 33px; }
   .background .formAll {
+    height: 500px;
     border: 1px solid #444;
     border-radius: 2px;
     background: #F8F8FF;
@@ -41,3 +45,13 @@ body {
       display: none; }
     .background .formAll .colorGray {
       color: gray; }
+
+@media screen and (max-width: 890px) {
+  .d-flex {
+    display: block !important; }
+    .d-flex .function {
+      width: 90vw; }
+    .d-flex .formAll {
+      margin-left: 0 !important; }
+      .d-flex .formAll .formArea {
+        width: 70vw !important; } }
